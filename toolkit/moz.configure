@@ -685,14 +685,10 @@ set_config("MOZ_AV1", av1)
 set_define("MOZ_AV1", av1)
 
 # JXL Image Codec Support
-# ==============================================================
-option("--disable-jxl", help="Disable jxl image support")
+# option("--enable-jxl", help="Enable jxl image support")
 
-
-@depends("--disable-jxl", milestone.is_nightly)
-def jxl(value, is_nightly):
-    if is_nightly and value:
-        return True
+# @depends("--enable-jxl", milestone.is_nightly)
+#        return False
 
 
 set_config("MOZ_JXL", jxl)
